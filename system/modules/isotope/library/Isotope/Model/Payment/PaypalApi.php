@@ -84,7 +84,7 @@ abstract class PaypalApi extends Payment
 
         $data = [
             [
-                'op'    => 'replace',
+                'op'    => 'add',
                 'path'  => '/payer/payer_info',
                 'value' => [
                     'email'            => $billingAddress->email,

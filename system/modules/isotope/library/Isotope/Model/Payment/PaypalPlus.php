@@ -64,11 +64,13 @@ class PaypalPlus extends PaypalApi
             return false;
         }
 
-        $request = $this->patchPayment($objOrder, $paypalData['id']);
+        /*$request = $this->patchPayment($objOrder, $paypalData['id']);
 
-        if (200 !== $request->code) {
+        dump($request);exit;
+
+        if ($request->hasError() || 200 !== $request->code) {
             return false;
-        }
+        }*/
 
         $request = $this->executePayment($paypalData['id'], \Input::get('PayerID'));
 

@@ -354,7 +354,7 @@ $GLOBALS['ISO_CHECKOUTSTEP'] = array
 (
     'address'   => array('\Isotope\CheckoutStep\BillingAddress', '\Isotope\CheckoutStep\ShippingAddress'),
     'shipping'  => array('\Isotope\CheckoutStep\ShippingMethod'),
-    'payment'   => array('\Isotope\CheckoutStep\PaymentMethod'),
+    'payment'   => array('\Isotope\CheckoutStep\PaymentMethod', '\Isotope\CheckoutStep\PaymentPaypalPlus'),
     'review'    => array('\Isotope\CheckoutStep\OrderConditionsOnTop', '\Isotope\CheckoutStep\OrderInfo', '\Isotope\CheckoutStep\OrderConditionsBeforeProducts', '\Isotope\CheckoutStep\OrderProducts', '\Isotope\CheckoutStep\OrderConditionsAfterProducts'),
 );
 
