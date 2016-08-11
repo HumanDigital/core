@@ -106,7 +106,7 @@ abstract class PSP extends Payment implements IsotopePayment, IsotopePostsale
                 $intStatus = $objConfig->orderstatus_error;
                 break;
 
-            case 0:  // Ungültig / Unvollständig
+            case 0:  // Ungültig / Unvollständig
             case 1:  // Zahlungsvorgang abgebrochen
             case 2:  // Genehmigung verweigert
             case 4:  // Gespeichert
@@ -218,7 +218,7 @@ abstract class PSP extends Payment implements IsotopePayment, IsotopePostsale
             'OWNERADDRESS2' => substr($objBillingAddress->street_2, 0, 35),
             'OWNERCTY'      => strtoupper($objBillingAddress->country),
             'OWNERTOWN'     => substr($objBillingAddress->city, 0, 35),
-            'OWNERTELNO'    => $objBillingAddress->phone,
+            'OWNERTELNO'    => preg_replace('/[^- +\/0-9]/','', $objBillingAddress->phone),
             'ACCEPTURL'     => \Environment::get('base') . $objModule->generateUrlForStep('complete', $objOrder),
             'DECLINEURL'    => \Environment::get('base') . $objModule->generateUrlForStep('failed'),
             'BACKURL'       => \Environment::get('base') . $objModule->generateUrlForStep('review'),
